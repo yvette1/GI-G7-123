@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'routes.dart';
+import 'board.dart';
 
 class WaitingPage extends StatelessWidget {
   const WaitingPage({super.key});
@@ -63,7 +64,16 @@ class WaitingPage extends StatelessWidget {
 
           FittedBox(
               child:
+              InkWell(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const BoardPage()),
+                  );
+                },
+                child:
               Container(
+
                   height: 200,
                   width: 250,
                   margin: const EdgeInsets.only(top:20,left:60,right:50),
@@ -72,6 +82,7 @@ class WaitingPage extends StatelessWidget {
                     color: Colors.red,
                   ),
                   child:
+
                   Column(
                     children:<Widget>[
                      Container(
@@ -89,6 +100,7 @@ class WaitingPage extends StatelessWidget {
                     ]
                   )
               )
+    )
           ),
 
         ],
